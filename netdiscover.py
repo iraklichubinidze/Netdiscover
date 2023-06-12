@@ -43,6 +43,10 @@ class Scanner():
             return clientList
         except KeyboardInterrupt:
             cprint("\n\n[-] CTRL + C | Program is disabled",'red')
+            exit()
+        except PermissionError:
+            cprint("\n\n[-] Permission denied",'red')
+            exit()
     def findGateway(self):
         try:
             gtw = gateways()
